@@ -20,3 +20,4 @@ interface FastEthernet1/0
 banner motd ^C This is a private computer system - Unauthorized use is prohibited ^C
 !
 username tommy pri 15 secret 0 tommy718!
+username rion pri 15 secret 0 rionel718!
