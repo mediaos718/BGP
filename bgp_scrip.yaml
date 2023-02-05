@@ -1,0 +1,15 @@
+---
+- name: "PLAY:1 - GET BGP SUMMARY"
+  gather_facts: False
+  connection: "network_cli"
+  hosts: all
+  tasks:
+  - name: "TASK:1 - 'SHOW IP BGP SUMMARY'"
+    ios_command:
+      commands: "show ip bgp summary"
+    register: "output_ios"
+  - name: "TASK:2 - PRINT BGP OUTPUT"
+    debug:
+      msg: "{{ output_ios.stdout[0] }}"
+
+

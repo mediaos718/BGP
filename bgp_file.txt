@@ -1,0 +1,21 @@
+interface Loopback0
+ description MGMT INTERFACE
+ ip address 10.0.0.2 255.255.255.255
+!
+ip routing
+!
+router bgp 200
+ bgp router-id 10.0.0.2
+ bgp log-neighbor-changes
+ neighbor 10.0.0.1 remote-as 100
+ neighbor 10.0.0.1 description TO-R2
+ neighbor 10.0.0.1 update-source Loopback0
+!
+ip route 10.0.0.1 255.255.255.255 10.100.100.1
+!
+interface FastEthernet1/0
+ description Link to R-1
+ ip address 10.100.100.2 255.255.255.0
+!
+banner motd ^C This is a private computer system - Unauthorized use is prohibited ^C
+

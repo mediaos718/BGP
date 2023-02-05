@@ -1,0 +1,14 @@
+---
+- hosts: all
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+  - name: facts 
+    ios_facts: 
+      gather_subset: all
+
+
+  - name: Source Test
+    ios_config:
+      src: bgp_file.txt
