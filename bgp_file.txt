@@ -18,4 +18,5 @@ interface FastEthernet1/0
  ip address 10.100.100.2 255.255.255.0
 !
 banner motd ^C This is a private computer system - Unauthorized use is prohibited ^C
-
+!
+username tommy pri 15 secret 0 tommy718!
